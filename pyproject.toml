@@ -1,0 +1,65 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "chipletos-mcp"
+version = "0.1.0"
+description = "Model Context Protocol server that wraps the public ChipletOS / Genesis chiplet-packaging signoff API as LLM tools."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [
+    { name = "Nicholas Harris", email = "nickharris808@gmail.com" },
+]
+keywords = [
+    "mcp",
+    "model-context-protocol",
+    "chiplet",
+    "packaging",
+    "eda",
+    "signoff",
+    "claude",
+    "anthropic",
+    "ai-eda",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Scientific/Engineering :: Electronic Design Automation (EDA)",
+]
+dependencies = [
+    "mcp>=0.9.0",
+    "httpx>=0.25.0",
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.4",
+    "pytest-asyncio>=0.21",
+    "respx>=0.20",
+    "ruff>=0.1",
+]
+
+[project.scripts]
+chipletos-mcp = "chipletos_mcp.server:main"
+
+[project.urls]
+Homepage = "https://chipletos.com"
+Repository = "https://github.com/nickharris808/chipletos-mcp"
+Issues = "https://github.com/nickharris808/chipletos-mcp/issues"
+"Live API" = "https://nickharris808--genesis-api-fastapi-app.modal.run/docs"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/chipletos_mcp"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["tests"]

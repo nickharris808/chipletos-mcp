@@ -1,0 +1,98 @@
+{
+  "name": "chipletos",
+  "display_name": "ChipletOS \u2014 Chiplet Packaging + Photonic Signoff",
+  "description": "Drive the ChipletOS chiplet-packaging + Photonic Signoff platform from any MCP-compatible agent. Predict impedance, run multi-objective Pareto inverse design, validate DRC, cross-check vs literature, generate fab-ready coupons, and design silicon-photonic waveguides through 14 tools wrapping the public Genesis API.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Nicholas Harris",
+    "email": "nickharris808@gmail.com",
+    "url": "https://chipletos.com"
+  },
+  "license": "MIT",
+  "homepage": "https://chipletos.com",
+  "repository": "https://github.com/nickharris808/chipletos-mcp",
+  "command": "chipletos-mcp",
+  "args": [],
+  "env": {
+    "CHIPLETOS_API_URL": {
+      "description": "ChipletOS Genesis API base URL (defaults to the public Modal endpoint).",
+      "default": "https://nickharris808--genesis-api-fastapi-app.modal.run",
+      "required": false
+    },
+    "CHIPLETOS_API_KEY": {
+      "description": "Optional API key for gated routes (predict-impedance, export-fab). Issued from the ChipletOS dashboard.",
+      "required": false,
+      "secret": true
+    }
+  },
+  "tools": [
+    {
+      "name": "chipletos_predict_impedance",
+      "description": "Predict Z\u2080 for a given TGV geometry across the public glass set."
+    },
+    {
+      "name": "chipletos_pareto_design",
+      "description": "Multi-objective Pareto inverse design across {Z\u2080, loss, crosstalk, yield}."
+    },
+    {
+      "name": "chipletos_inverse_design",
+      "description": "Differentiable-surrogate inverse design: target Z\u2080 \u2192 geometry."
+    },
+    {
+      "name": "chipletos_cross_solver_matrix",
+      "description": "100-geometry cross-solver disagreement witness (BEM vs Palace vs OpenEMS vs gprMax)."
+    },
+    {
+      "name": "chipletos_drc_validate",
+      "description": "Glass-interposer DRC with IPC/SEMI defect codes."
+    },
+    {
+      "name": "chipletos_validate_against_measurement",
+      "description": "Surrogate vs literature/measurement cross-check (honest source_type disclosure)."
+    },
+    {
+      "name": "chipletos_lab_readiness_score",
+      "description": "Composite 0-100 lab-readiness score with verdict bands."
+    },
+    {
+      "name": "chipletos_search_s2p_library",
+      "description": "Search the curated S2P Touchstone library by glass, pitch, thickness."
+    },
+    {
+      "name": "chipletos_search_defects",
+      "description": "Search the 33-type IPC/SEMI/ISO defect taxonomy."
+    },
+    {
+      "name": "chipletos_generate_coupon",
+      "description": "Generate a fab-ready coupon bundle (DRC + stack-up + SOW + cost)."
+    },
+    {
+      "name": "chipletos_predict_waveguide_mode",
+      "description": "Predict Neff, ng, propagation loss, and bend loss for a Si or SiN photonic waveguide via TMM analytical model."
+    },
+    {
+      "name": "chipletos_photonic_signoff_health",
+      "description": "ChipletOS Photonic Signoff capability inventory \u2014 primitives, solver stack, audit gates."
+    },
+    {
+      "name": "chipletos_photonic_drc",
+      "description": "AIM Photonics-class DRC on photonic geometries (waveguides, rings, gratings)."
+    },
+    {
+      "name": "chipletos_photonic_validate_ieee",
+      "description": "Validate the analytical TMM waveguide solver against 5 published Si-photonic Neff references."
+    },
+    {
+      "name": "chipletos_leaderboard",
+      "description": "Open Glass-TGV signoff benchmark leaderboard (kNN/RF/surrogate baselines, BEM-truth public-glass split \u2014 not VNA-measured)."
+    }
+  ],
+  "categories": [
+    "engineering",
+    "scientific",
+    "eda",
+    "ai-eda",
+    "semiconductors",
+    "photonics"
+  ]
+}
