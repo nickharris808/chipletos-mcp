@@ -26,7 +26,7 @@
 - Call `chipletos_pareto_design` with `objectives: ["z0", "loss"]` and
   `il_max_db: 1.0` to enforce the UCIe insertion-loss budget at 16 GHz.
 
-**Genesis context:** UCIe regime gets 81.6 % gap closure on the Sprint 45
+**Genesis context:** UCIe regime gets 81.6 % gap closure on the a recent release
 v2-clean Palace residual cal head; the v3 surrogate is well-calibrated
 on UCIe geometries (see CLAUDE.md::C20).
 

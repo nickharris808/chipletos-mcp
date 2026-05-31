@@ -31,6 +31,6 @@
 - Loss vs crosstalk trade-off curve
 - Use C7 differential scaling law (`log(Z0_diff) = 0.338·log(sep/d), R²=0.918`) to translate Z₀_single → Z₀_diff
 
-**Heads-up:** If the route returns 500, you may have hit the Sprint 49
+**Note:** the Pareto route uses a pure-Python coax-proxy hot path; the historical
 d/p ∈ [0.4, 0.5] SIGSEGV (see Genesis CLAUDE.md::C38). Pick a different
 diameter or pitch range.

@@ -7,7 +7,7 @@ selected objectives. Public-demo route; rate-limited per IP.
 
 Heads-up: CLAUDE.md::C38 notes a known Modal-side SIGSEGV on geometries
 with d/p ∈ [0.4, 0.5] (in the LAPACK hot path of the L-BFGS-B inner loop).
-Sprint 49 fix is in flight; until then the tool catches 500s and reports them.
+Uses a pure-Python coax-proxy hot path (no BEM in the inner loop); returns 200.
 """
 
 from __future__ import annotations

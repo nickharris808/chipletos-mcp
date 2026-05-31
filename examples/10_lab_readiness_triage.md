@@ -19,13 +19,13 @@
 
 **What the agent learns:**
 
-- 0-100 composite score across available Sprint 37 gates (BEM stability,
+- 0-100 composite score across available a recent release gates (BEM stability,
   cross-solver consensus, in-distribution check, signoff route success,
   manufacturability)
 - Verdict band: `send_to_lab` (≥95), `send_with_extra_qc` (80-94),
   `hold` (60-79), `reject` (<60)
 - `partial_score: true` when some gates lack data — NO fabricated proxies
-  per Sprint 37 Chunk 4b
+  per a recent release Chunk 4b
 - Geometry + surrogate prediction + convergence
 
 **Follow-up:** If `verdict == hold`, ask the agent for the worst gate and

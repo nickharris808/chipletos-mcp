@@ -2,7 +2,7 @@
 
 `chipletos-mcp` exposes 14 tools across two sub-brands: chiplet packaging
 signoff (glass-TGV PDK, 10 tools) + Photonic Signoff (silicon-photonic
-design, 4 tools — Sprint 50/51 alpha). Each is a thin wrapper around a public
+design, 4 tools — a recent release/51 alpha). Each is a thin wrapper around a public
 (or API-key-gated) route on the ChipletOS / Genesis Modal API at
 `https://nickharris808--genesis-api-fastapi-app.modal.run`.
 
@@ -15,7 +15,7 @@ schemas, see the live API at
 | Tool | Method + Path | Public | Notes |
 |------|--------------|--------|-------|
 | `chipletos_predict_impedance` | `POST /v1/glass-pdk/cheapest-50ohm` | yes | Public-demo proxy; routes through cheapest-50ohm sweep. For single-point precise prediction with CI, use the API-key-gated `/v1/glass-pdk/predict-impedance` directly. |
-| `chipletos_pareto_design` | `POST /v1/glass-pdk/geometry-pareto` | yes | Heads-up: known SIGSEGV for d/p ∈ [0.4, 0.5] until Sprint 49 (Genesis CLAUDE.md::C38). |
+| `chipletos_pareto_design` | `POST /v1/glass-pdk/geometry-pareto` | yes | Runs a pure-Python coax-proxy hot path (no BEM in the inner loop); returns 200. |
 | `chipletos_inverse_design` | `POST /v1/glass-pdk/geometry-from-target` | yes | Includes optional route-backed signoff and `lab_readiness_score`. |
 | `chipletos_cross_solver_matrix` | `GET /v1/glass-pdk/cross-solver-matrix` | yes | Read-only witness; updated on every Genesis cross-solver run. |
 | `chipletos_drc_validate` | `POST /v1/glass-pdk/drc-validate` | yes | IPC/SEMI defect codes for each violation. |
@@ -23,13 +23,13 @@ schemas, see the live API at
 | `chipletos_lab_readiness_score` | `POST /v1/glass-pdk/geometry-from-target` (field extract) | yes | Extracts the composite 0-100 score block; verdict bands send_to_lab / send_with_extra_qc / hold / reject. |
 | `chipletos_search_s2p_library` | `GET /v1/library/s2p` | yes | 2.27M+ asset registry; paginated. |
 | `chipletos_search_defects` | `GET /v1/defects/search` | yes | 33-type IPC/SEMI/ISO taxonomy. |
-| `chipletos_generate_coupon` | `POST /v1/coupons/export-fab` | NO — API key | Coupon bundles include 12-layer stack-up + SOW + cost; gated for security per Sprint 46 P2 hardening. |
+| `chipletos_generate_coupon` | `POST /v1/coupons/export-fab` | NO — API key | Coupon bundles include 12-layer stack-up + SOW + cost; gated for security. |
 
 ## Photonic Signoff (alpha)
 
 Sub-brand under ChipletOS for photonic IC design + signoff (Marvell SiPh,
 Intel Foundry SiPh, NVIDIA optical, Broadcom, Acacia). Sister to glass_pdk
-for chiplet packaging. Sprint 50/51 alpha — waveguide primitive shipped;
+for chiplet packaging. a recent release/51 alpha — waveguide primitive shipped;
 MZI / MMI / ring / grating / photonic-crystal queued S52-S55. See Genesis
 CLAUDE.md::C39 for the sub-brand plan.
 
@@ -65,6 +65,6 @@ for t in ALL_TOOLS:
 
 The Genesis API attaches `honest_caveat`, `_chipletos_mcp_note`, or
 `notes` fields to most responses. These exist because the production
-posture is "no fabricated proxy values" (Sprint 37 Chunk 4b). The MCP
+posture is "no fabricated proxy values" (a recent release Chunk 4b). The MCP
 server passes them through verbatim; encourage the agent to surface them
 to the user when verdicts are partial or OOD.

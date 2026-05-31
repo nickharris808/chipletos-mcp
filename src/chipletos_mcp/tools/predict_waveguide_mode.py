@@ -1,6 +1,6 @@
 """chipletos_predict_waveguide_mode — silicon-photonic waveguide mode prediction.
 
-Wraps POST /v1/photonics/predict-waveguide-mode (Sprint 50 alpha).
+Wraps POST /v1/photonics/predict-waveguide-mode (a recent release alpha).
 
 Predicts effective index (Neff), group index (ng), propagation loss, and bend
 loss for a Si or SiN strip waveguide via the Transfer-Matrix-Method (TMM)
@@ -8,8 +8,8 @@ analytical solver. Use when designing photonic-integrated-circuit (PIC)
 waveguides for Marvell SiPh, Intel Foundry SiPh, NVIDIA optical interconnect,
 Broadcom, or Acacia.
 
-Honest framing (Sprint 50): the TMM analytical solver has 5-15% relative
-error vs Meep FDTD; the surrogate v1 lands Sprint 50 day 14 with R²≥0.999
+Honest framing (a recent release): the TMM analytical solver has 5-15% relative
+error vs Meep FDTD; the surrogate v1 (R²≥0.999 vs Meep) is on the roadmap
 vs Meep. The response carries an envelope flag for manufacturability checks.
 """
 

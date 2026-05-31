@@ -56,7 +56,7 @@ See [`examples/`](examples/) for 18 worked agent prompts and [`docs/INSTALL.md`]
 
 ### Photonic Signoff (alpha)
 
-Sister sub-brand to glass-TGV PDK — silicon-photonic IC design for Marvell SiPh, Intel Foundry, NVIDIA optical, Broadcom, Acacia. Sprint 52 v1 LIVE: 5 of 6 photonic primitive surrogates (MZI, MMI, ring, grating, photonic crystal) trained on Genesis local FDFD/BPM truth (test R² ≥ 0.99, Gate 18 PASS) with per-prediction 95% conformal CI; waveguide on TMM Marcatili-Hocker analytical fallback (FDFD 50nm-mesh R²=0.93 ceiling). Meep-grade retrain → Sprint 55+. See Genesis CLAUDE.md::C39 for the sub-brand plan.
+Sister sub-brand to glass-TGV PDK — silicon-photonic IC design for Marvell SiPh, Intel Foundry, NVIDIA optical, Broadcom, Acacia. Current release: 5 of 6 photonic primitive surrogates (MZI, MMI, ring, grating, photonic crystal) trained on Genesis local FDFD/BPM truth (test R² ≥ 0.99, Gate 18 PASS) with per-prediction 95% conformal CI; waveguide on TMM Marcatili-Hocker analytical fallback (FDFD 50nm-mesh R²=0.93 ceiling). Meep-grade retrain is on the roadmap. See Genesis CLAUDE.md::C39 for the sub-brand plan.
 
 | Tool | Wraps | What it does |
 |------|-------|--------------|
@@ -65,7 +65,7 @@ Sister sub-brand to glass-TGV PDK — silicon-photonic IC design for Marvell SiP
 | `chipletos_photonic_drc` | `POST /v1/photonics/drc-photonic` | AIM Photonics-class DRC: min feature 80 nm, min spacing 100 nm, min bend radius per mode-class. |
 | `chipletos_photonic_validate_ieee` | `POST /v1/photonics/validate-against-ieee` | Cross-check TMM solver vs 5 IEEE references (Bogaerts 2018, Pavanello 2020, Lim 2014, Selvaraja 2010, Xu 2017). |
 
-Some routes (predict-impedance, export-fab) require an API key issued by the ChipletOS dashboard. The MCP server passes `X-API-Key` from the `CHIPLETOS_API_KEY` env var when set. All photonic routes remain public during the Sprint 52 v1 release.
+Some routes (predict-impedance, export-fab) require an API key issued by the ChipletOS dashboard. The MCP server passes `X-API-Key` from the `CHIPLETOS_API_KEY` env var when set. All photonic routes currently remain public.
 
 ## Links
 

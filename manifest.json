@@ -2,7 +2,7 @@
   "name": "chipletos",
   "display_name": "ChipletOS \u2014 Chiplet Packaging + Photonic Signoff",
   "description": "Drive the ChipletOS chiplet-packaging + Photonic Signoff platform from any MCP-compatible agent. Predict impedance, run multi-objective Pareto inverse design, validate DRC, cross-check vs literature, generate fab-ready coupons, and design silicon-photonic waveguides through 14 tools wrapping the public Genesis API.",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "author": {
     "name": "Nicholas Harris",
     "email": "nickharris808@gmail.com",

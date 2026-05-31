@@ -96,7 +96,7 @@ class ChipletosClient:
         h = {
             "User-Agent": USER_AGENT,
             "Accept": "application/json",
-            # Sprint 46 P2-5: optional client-side hint that this is a public-demo
+            # a recent release P2-5: optional client-side hint that this is a public-demo
             # call; the Modal middleware does its own IP throttling regardless.
             "X-ChipletOS-Source": "mcp",
         }

@@ -1,7 +1,7 @@
 """chipletos_lab_readiness_score — composite 0-100 lab-readiness verdict.
 
 Calls POST /v1/glass-pdk/geometry-from-target (which embeds lab_readiness_score
-in its response per Sprint 37 Chunk 4b / Track A Gate 7) and extracts the
+in its response per a recent release Chunk 4b / Track A Gate 7) and extracts the
 composite-score block. Verdict bands: send_to_lab ≥95 / send_with_extra_qc
 80-94 / hold 60-79 / reject <60. Honest partial-score handling when some gates
 lack data.

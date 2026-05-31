@@ -23,11 +23,11 @@ The agent should call the tool a handful of times with `width_nm ∈ {400, 450, 
 **What the agent learns:**
 
 - Effective index `Neff` and group index `ng` per width
-- Propagation loss in `dB/cm` (TMM analytical; 5-15% rel-err vs Meep per Sprint 50 disclosure)
+- Propagation loss in `dB/cm` (TMM analytical; 5-15% rel-err vs Meep per a recent release disclosure)
 - Bend loss in `dB/90°` for the given `bend_radius_um`
 - Envelope flag — manufacturability check vs the alpha primitive envelope (width 200-1500 nm, height 180-400 nm, λ 1260-1670 nm, Si or SiN)
-- `method` field indicates whether the prediction is the TMM analytical solver or the trained surrogate (surrogate lands Sprint 50 day 14)
+- `method` field indicates whether the prediction is the TMM analytical solver or the trained surrogate (surrogate lands a recent release day 14)
 
 **Follow-up:** "Now run DRC on the final width" → `chipletos_photonic_drc` with the chosen `{width_nm, height_nm, material}` geometry. Then "validate the solver against published references" → `chipletos_photonic_validate_ieee`.
 
-**Honest framing:** the Sprint 50 alpha uses the TMM analytical solver in the hot path; Marcatili-Hocker effective-index approximation. Surrogate v1 (R²≥0.999 vs Meep) lands Sprint 50 day 14 and silently swaps in via `waveguide_surrogate.predict`.
+**Honest framing:** the a recent release alpha uses the TMM analytical solver in the hot path; Marcatili-Hocker effective-index approximation. Surrogate v1 (R²≥0.999 vs Meep) lands a recent release day 14 and silently swaps in via `waveguide_surrogate.predict`.

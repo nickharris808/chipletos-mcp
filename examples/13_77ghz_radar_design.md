@@ -25,11 +25,11 @@
 
 **Genesis context:**
 
-- Sprint 39 Bucket 5 ships a multi-solver-verified `golden_mmwave_77ghz` kit
+- a recent release Bucket 5 ships a multi-solver-verified `golden_mmwave_77ghz` kit
   (Z₀=40.52 Ω at 77 GHz, 3.75:1 pitch:diameter for group-delay flatness)
-- Sprint 45 v2-clean MMWAVE regime per-regime cal head: 43 % gap closure
-  (Sprint 47 hidden=128 sweep lifts to 79.8 %, near-elite)
-- BEM-vs-Palace envelope at 77 GHz: median 17 % spread (Sprint 47 33×6 sweep)
+- a recent release v2-clean MMWAVE regime per-regime cal head: 43 % gap closure
+  (a recent release hidden=128 sweep lifts to 79.8 %, near-elite)
+- BEM-vs-Palace envelope at 77 GHz: median 17 % spread (a recent release 33×6 sweep)
 
 **Honest disclosure to surface to the user:** mmWave regime is where the
 BEM-vs-Palace envelope is widest. Cross-solver consensus check is

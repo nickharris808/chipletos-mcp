@@ -40,4 +40,4 @@ user understand the trade-off space, not to pick a single design point.
   refinement with BEM (refine_with_solver=True) tightens the Z₀ axis but
   is ~10× slower.
 - If you see a route 500 error for d/p ∈ [0.4, 0.5], that's the known
-  Sprint 49 LAPACK SIGSEGV — pick a different ratio band and re-run.
+  historical LAPACK SIGSEGV (now fixed via a pure-Python hot path) — re-run if you see a 500.

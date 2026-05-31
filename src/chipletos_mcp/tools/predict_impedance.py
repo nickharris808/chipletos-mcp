@@ -1,7 +1,7 @@
 """chipletos_predict_impedance — predict Z₀ for a TGV geometry.
 
 The headline /v1/glass-pdk/predict-impedance route is API-key-gated on Modal
-(Sprint 46 P2 hardening — it was removed from DEMO_PUBLIC_POSTS so unauthenticated
+(a recent release P2 hardening — it was removed from DEMO_PUBLIC_POSTS so unauthenticated
 clients can't distill the 6.75M-row v3 ensemble). For the public-demo lane this
 tool routes through /v1/glass-pdk/cheapest-50ohm which sweeps every glass in the
 material database for a target Z₀ and returns Z₀-achieved per glass — answering

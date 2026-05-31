@@ -2,6 +2,18 @@
 
 All notable changes to `chipletos-mcp` are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/); versions follow SemVer.
 
+## [0.2.0] — 2026-05-31
+
+### Changed
+- Tool docs refreshed to reflect current capabilities: inverse design returns a calibrated
+  pass-probability + named dominant risk + honest reachability; the multi-fidelity sim-to-real
+  calibration and the measured-truth / pre-registered-prediction posture are surfaced.
+- Corrected a stale note on `chipletos_pareto_design`: the historical LAPACK SIGSEGV is fixed
+  (pure-Python coax-proxy hot path; the route returns 200).
+- Version-neutral wording throughout (no internal release-cadence labels).
+
+All tools remain thin clients over the gated `/v1` API — no solver, corpus, or weights ship here.
+
 ## [0.1.0] — 2026-05-26
 
 Initial public release.

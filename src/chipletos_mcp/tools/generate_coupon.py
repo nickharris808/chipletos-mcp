@@ -2,7 +2,7 @@
 
 Wraps POST /v1/coupons/export-fab.
 
-This route is API-key-gated on Modal (Sprint 46 P2 hardening): coupon bundles
+This route is API-key-gated on Modal (a recent release P2 hardening): coupon bundles
 include a 12-layer stack-up + per-foundry SOW + cost band, all considered
 sensitive. The tool will return a 401 with a clear setup hint if the agent
 calls it without CHIPLETOS_API_KEY set.

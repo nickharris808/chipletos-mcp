@@ -32,7 +32,7 @@ from .search_s2p_library import TOOL as search_s2p_library_tool  # noqa: E402
 from .search_defects import TOOL as search_defects_tool  # noqa: E402
 from .generate_coupon import TOOL as generate_coupon_tool  # noqa: E402
 
-# ChipletOS Photonic Signoff sub-brand (Sprint 50/51 alpha — see Genesis CLAUDE.md::C39)
+# ChipletOS Photonic Signoff sub-brand (a recent release/51 alpha — see Genesis CLAUDE.md::C39)
 from .predict_waveguide_mode import TOOL as predict_waveguide_mode_tool  # noqa: E402
 from .photonic_signoff_health import TOOL as photonic_signoff_health_tool  # noqa: E402
 from .photonic_drc import TOOL as photonic_drc_tool  # noqa: E402
