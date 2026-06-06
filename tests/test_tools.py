@@ -19,7 +19,6 @@ EXPECTED_TOOL_NAMES = {
     "chipletos_validate_against_measurement",
     "chipletos_lab_readiness_score",
     "chipletos_search_s2p_library",
-    "chipletos_search_defects",
     "chipletos_generate_coupon",
     # ChipletOS Photonic Signoff (alpha)
     "chipletos_predict_waveguide_mode",
@@ -34,7 +33,7 @@ EXPECTED_TOOL_NAMES = {
 def test_all_tools_registered() -> None:
     names = {t.tool_name for t in ALL_TOOLS}
     assert names == EXPECTED_TOOL_NAMES, f"Tool registry mismatch: {names ^ EXPECTED_TOOL_NAMES}"
-    assert len(ALL_TOOLS) == 15
+    assert len(ALL_TOOLS) == 14
 
 
 def test_every_tool_has_a_description() -> None:
@@ -286,18 +285,6 @@ async def test_search_s2p_library_smoke(client: ChipletosClient, base_url: str) 
 
     result = await TOOL.run(client, {"glass": "EagleXG", "limit": 10})
     assert "items" in result
-
-
-@pytest.mark.asyncio
-@respx.mock
-async def test_search_defects_smoke(client: ChipletosClient, base_url: str) -> None:
-    respx.get(f"{base_url}/v1/defects/search").mock(
-        return_value=httpx.Response(200, json={"total": 0, "defects": []})
-    )
-    from chipletos_mcp.tools.search_defects import TOOL
-
-    result = await TOOL.run(client, {"q": "scratch", "limit": 10})
-    assert "defects" in result
 
 
 @pytest.mark.asyncio

@@ -22,7 +22,6 @@ schemas, see the live API at
 | `chipletos_validate_against_measurement` | `POST /v1/glass-pdk/validate-against-measurement` | yes | Honest source_type disclosure (measurement vs HFSS simulation). |
 | `chipletos_lab_readiness_score` | `POST /v1/glass-pdk/geometry-from-target` (field extract) | yes | Extracts the composite 0-100 score block; verdict bands send_to_lab / send_with_extra_qc / hold / reject. |
 | `chipletos_search_s2p_library` | `GET /v1/library/s2p` | yes | 2.27M+ asset registry; paginated. |
-| `chipletos_search_defects` | `GET /v1/defects/search` | yes | 33-type IPC/SEMI/ISO taxonomy. |
 | `chipletos_generate_coupon` | `POST /v1/coupons/export-fab` | NO — API key | Coupon bundles include 12-layer stack-up + SOW + cost; gated for security. |
 
 ## Photonic Signoff (alpha)

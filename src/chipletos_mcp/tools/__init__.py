@@ -29,10 +29,9 @@ from .drc_validate import TOOL as drc_validate_tool  # noqa: E402
 from .validate_against_measurement import TOOL as validate_against_measurement_tool  # noqa: E402
 from .lab_readiness_score import TOOL as lab_readiness_score_tool  # noqa: E402
 from .search_s2p_library import TOOL as search_s2p_library_tool  # noqa: E402
-from .search_defects import TOOL as search_defects_tool  # noqa: E402
 from .generate_coupon import TOOL as generate_coupon_tool  # noqa: E402
 
-# ChipletOS Photonic Signoff sub-brand (a recent release/51 alpha — see Genesis CLAUDE.md::C39)
+# ChipletOS Photonic Signoff sub-brand (alpha)
 from .predict_waveguide_mode import TOOL as predict_waveguide_mode_tool  # noqa: E402
 from .photonic_signoff_health import TOOL as photonic_signoff_health_tool  # noqa: E402
 from .photonic_drc import TOOL as photonic_drc_tool  # noqa: E402
@@ -51,7 +50,6 @@ ALL_TOOLS: list[ChipletosTool] = [
     validate_against_measurement_tool,
     lab_readiness_score_tool,
     search_s2p_library_tool,
-    search_defects_tool,
     generate_coupon_tool,
     # ChipletOS Photonic Signoff (alpha)
     predict_waveguide_mode_tool,

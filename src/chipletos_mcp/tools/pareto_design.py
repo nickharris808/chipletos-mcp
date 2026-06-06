@@ -3,11 +3,11 @@
 Wraps POST /v1/glass-pdk/geometry-pareto.
 
 Returns a Pareto front of {diameter, pitch, thickness} candidates across the
-selected objectives. Public-demo route; rate-limited per IP.
+selected objectives. Requires an API key (gated route; free trial key from the
+ChipletOS dashboard).
 
-Heads-up: CLAUDE.md::C38 notes a known Modal-side SIGSEGV on geometries
-with d/p ∈ [0.4, 0.5] (in the LAPACK hot path of the L-BFGS-B inner loop).
-Uses a pure-Python coax-proxy hot path (no BEM in the inner loop); returns 200.
+Implementation note: the optimizer uses a pure-Python closed-form coax proxy in
+its inner loop (no field solver in the hot path), so the route returns promptly.
 """
 
 from __future__ import annotations

@@ -51,7 +51,6 @@ See [`examples/`](examples/) for 18 worked agent prompts and [`docs/INSTALL.md`]
 | `chipletos_validate_against_measurement` | `POST /v1/glass-pdk/validate-against-measurement` | Surrogate vs literature/measurement cross-check. |
 | `chipletos_lab_readiness_score` | `POST /v1/glass-pdk/geometry-from-target` (field extract) | Composite 0–100 lab-readiness score with verdict bands. |
 | `chipletos_search_s2p_library` | `GET /v1/library/s2p` | Search 2.27M+ validated Touchstone S2P files. |
-| `chipletos_search_defects` | `GET /v1/defects/search` | Search the 33-type IPC/SEMI/ISO defect taxonomy. |
 | `chipletos_generate_coupon` | `POST /v1/coupons/export-fab` (API-key gated) | Fab-ready coupon bundle: DRC + stack-up + SOW + cost. |
 
 ### Photonic Signoff (alpha)
@@ -65,7 +64,7 @@ Sister sub-brand to glass-TGV PDK — silicon-photonic IC design for Marvell SiP
 | `chipletos_photonic_drc` | `POST /v1/photonics/drc-photonic` | AIM Photonics-class DRC: min feature 80 nm, min spacing 100 nm, min bend radius per mode-class. |
 | `chipletos_photonic_validate_ieee` | `POST /v1/photonics/validate-against-ieee` | Cross-check TMM solver vs 5 IEEE references (Bogaerts 2018, Pavanello 2020, Lim 2014, Selvaraja 2010, Xu 2017). |
 
-Some routes (predict-impedance, export-fab) require an API key issued by the ChipletOS dashboard. The MCP server passes `X-API-Key` from the `CHIPLETOS_API_KEY` env var when set. All photonic routes currently remain public.
+The glass-TGV signoff tools (predict-impedance, inverse design, Pareto, lab-readiness, DRC, validate-against-measurement, cross-solver, coupon export) and benchmark submit require an API key — get a free trial key from the ChipletOS dashboard. The MCP server passes it via `X-API-Key` from the `CHIPLETOS_API_KEY` env var. The cheap analytical **photonic** demos (predict-waveguide-mode, photonic DRC, IEEE crosscheck, signoff-health) and the read-only leaderboard view remain public (no key needed).
 
 ## Links
 

@@ -13,7 +13,6 @@ and what the agent should learn.
 | 05 | Cross-check surrogate vs Sukumaran 2014 | `chipletos_validate_against_measurement` |
 | 06 | Multi-solver disagreement triage | `chipletos_cross_solver_matrix` |
 | 07 | Find a similar S2P in the library | `chipletos_search_s2p_library` |
-| 08 | Look up a defect code | `chipletos_search_defects` |
 | 09 | Generate an Amkor fab coupon bundle | `chipletos_generate_coupon` |
 | 10 | Score lab readiness for tape-out | `chipletos_lab_readiness_score` |
 | 11 | Full signoff pipeline (predict → DRC → coupon) | (3 tools chained) |

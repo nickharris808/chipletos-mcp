@@ -2,11 +2,11 @@
 
 Wraps POST /v1/glass-pdk/geometry-from-target.
 
-Uses the differentiable PROV 7 v3 surrogate (R²=0.9999966, MAPE=0.029%, see
-Genesis CLAUDE.md::C16) plus optional route-backed signoff with per-prediction
-CI, OOD flag, regime, and a composite lab_readiness_score.
+Uses the differentiable Glass-PDK v3 surrogate (R²=0.9999966, MAPE=0.029% vs the
+BEM solver — surrogate-vs-sim, not measured silicon) plus optional route-backed
+signoff with per-prediction CI, OOD flag, regime, and a composite lab_readiness_score.
 
-Public-demo route; rate-limited per IP.
+Requires an API key (this route is gated; get a free trial key from the ChipletOS dashboard).
 """
 
 from __future__ import annotations

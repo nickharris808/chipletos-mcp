@@ -1,6 +1,6 @@
 """MCP server entrypoint for chipletos-mcp.
 
-Registers the 10 ChipletOS tools and runs over stdio (the canonical MCP
+Registers the 14 ChipletOS tools and runs over stdio (the canonical MCP
 transport for desktop agents). The console-script `chipletos-mcp` calls
 `main()` which kicks off the asyncio loop.
 
