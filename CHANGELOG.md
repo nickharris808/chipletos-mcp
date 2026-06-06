@@ -2,6 +2,17 @@
 
 All notable changes to `chipletos-mcp` are documented here. Format follows [Keep a Changelog](https://keepachangelog.com/); versions follow SemVer.
 
+## [0.2.1] — 2026-06-06
+
+### Added
+- Tool safety annotations on all 14 tools (`readOnlyHint`/`destructiveHint`/`idempotentHint`/
+  `openWorldHint` + human-readable titles). Every tool is read-only from the caller's
+  perspective (queries/computes via the public API; nothing mutates the caller's environment).
+  This satisfies Anthropic Connectors Directory review (missing annotations are the most
+  common rejection cause). Remaining directory prerequisites are operator-side: a `.mcpb`
+  Desktop-Extension bundle (or a remote-HTTPS deployment), a published privacy policy, and the
+  submission form.
+
 ## [0.2.0] — 2026-05-31
 
 ### Changed

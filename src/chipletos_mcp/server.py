@@ -18,7 +18,7 @@ from typing import Any
 
 from mcp.server import Server
 from mcp.server.stdio import stdio_server
-from mcp.types import TextContent, Tool
+from mcp.types import TextContent, Tool, ToolAnnotations
 
 from . import __version__
 from .client import ChipletosAPIError, ChipletosClient
@@ -49,13 +49,28 @@ def build_server(client: ChipletosClient | None = None) -> Server:
 
     tool_map = {t.tool_name: t for t in ALL_TOOLS}
 
+    def _title(name: str) -> str:
+        return name.removeprefix("chipletos_").replace("_", " ").title()
+
     @server.list_tools()
     async def list_tools() -> list[Tool]:
+        # Every ChipletOS tool is read-only from the caller's perspective: it queries
+        # or computes via the public API and returns data; none mutate the caller's
+        # environment or delete state. openWorldHint=True because each calls an external
+        # HTTPS service. Safety annotations are required by Anthropic's Connectors
+        # Directory review (missing readOnlyHint/destructiveHint causes ~30% of rejections).
         return [
             Tool(
                 name=t.tool_name,
                 description=t.description,
                 inputSchema=t.input_schema,
+                annotations=ToolAnnotations(
+                    title=_title(t.tool_name),
+                    readOnlyHint=True,
+                    destructiveHint=False,
+                    idempotentHint=True,
+                    openWorldHint=True,
+                ),
             )
             for t in ALL_TOOLS
         ]
